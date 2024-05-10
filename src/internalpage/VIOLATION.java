@@ -40,7 +40,7 @@ DefaultTableModel model;
    long l = System.currentTimeMillis();
   Date todayDate = new Date(l);
         try {
-             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/library_ba", "root", "");
+             con = DriverManager.getConnection("jdbc:mysql://localhost:3307/library_ba", "root", "");
              PreparedStatement pst = con.prepareStatement("select * from issued_bookdet where DUE < ? and STATUS = ?");
              pst.setDate(1, todayDate);
              pst.setString(2, "PENDING");
@@ -93,10 +93,10 @@ DefaultTableModel model;
 
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(0, 58, 140));
+        jPanel1.setBackground(new java.awt.Color(0, 204, 0));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel10.setBackground(new java.awt.Color(204, 0, 0));
+        jPanel10.setBackground(new java.awt.Color(255, 255, 255));
         jPanel10.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         DETAILS.setModel(new javax.swing.table.DefaultTableModel(
@@ -107,7 +107,8 @@ DefaultTableModel model;
                 "ISSUED ID", "ISBN", "STUDENT ID", "ISSUED DATE", "DUE DATE", "STATUS"
             }
         ));
-        DETAILS.setColorBackgoundHead(new java.awt.Color(0, 153, 153));
+        DETAILS.setColorBackgoundHead(new java.awt.Color(255, 255, 255));
+        DETAILS.setColorForegroundHead(new java.awt.Color(0, 204, 0));
         DETAILS.setFuenteFilas(new java.awt.Font("Sylfaen", 1, 12)); // NOI18N
         DETAILS.setFuenteFilasSelect(new java.awt.Font("Sylfaen", 1, 12)); // NOI18N
         DETAILS.setFuenteHead(new java.awt.Font("Sylfaen", 1, 14)); // NOI18N
@@ -115,15 +116,16 @@ DefaultTableModel model;
         DETAILS.setGrosorBordeFilas(0);
         jScrollPane1.setViewportView(DETAILS);
 
-        jPanel10.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 60, 810, 370));
+        jPanel10.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 850, 370));
 
+        rSMaterialButtonCircle1.setBackground(new java.awt.Color(0, 204, 51));
         rSMaterialButtonCircle1.setText("PRINT");
         rSMaterialButtonCircle1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rSMaterialButtonCircle1ActionPerformed(evt);
             }
         });
-        jPanel10.add(rSMaterialButtonCircle1, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 10, 110, 40));
+        jPanel10.add(rSMaterialButtonCircle1, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 10, 110, 40));
 
         jPanel1.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 870, 450));
 

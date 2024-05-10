@@ -131,13 +131,13 @@ String quantity= ED.getText();
 
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(0, 58, 140));
+        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel10.setBackground(new java.awt.Color(204, 0, 0));
+        jPanel10.setBackground(new java.awt.Color(0, 204, 0));
         jPanel10.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        EN.setBackground(new java.awt.Color(204, 0, 0));
+        EN.setBackground(new java.awt.Color(0, 204, 0));
         EN.setBorder(null);
         EN.setForeground(new java.awt.Color(153, 255, 153));
         EN.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -152,7 +152,7 @@ String quantity= ED.getText();
         jLabel1.setText("ISBN:");
         jPanel10.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 160, 32));
 
-        EBT.setBackground(new java.awt.Color(204, 0, 0));
+        EBT.setBackground(new java.awt.Color(0, 204, 0));
         EBT.setBorder(null);
         EBT.setForeground(new java.awt.Color(153, 255, 153));
         EBT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -178,7 +178,7 @@ String quantity= ED.getText();
         jLabel4.setText("GENRE:");
         jPanel10.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, 160, 32));
 
-        ED.setBackground(new java.awt.Color(204, 0, 0));
+        ED.setBackground(new java.awt.Color(0, 204, 0));
         ED.setBorder(null);
         ED.setForeground(new java.awt.Color(153, 255, 153));
         ED.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -204,7 +204,7 @@ String quantity= ED.getText();
         jLabel6.setText("QUANTITY:");
         jPanel10.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 310, 160, 32));
 
-        QUANT.setBackground(new java.awt.Color(204, 0, 0));
+        QUANT.setBackground(new java.awt.Color(0, 204, 0));
         QUANT.setBorder(null);
         QUANT.setForeground(new java.awt.Color(153, 255, 153));
         QUANT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -218,6 +218,7 @@ String quantity= ED.getText();
         });
         jPanel10.add(QUANT, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 340, 270, -1));
 
+        DELETE.setBackground(new java.awt.Color(255, 0, 0));
         DELETE.setText("DELETE");
         DELETE.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -226,6 +227,7 @@ String quantity= ED.getText();
         });
         jPanel10.add(DELETE, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 400, 110, 59));
 
+        ADD.setBackground(new java.awt.Color(255, 0, 0));
         ADD.setText("ADD");
         ADD.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -234,6 +236,7 @@ String quantity= ED.getText();
         });
         jPanel10.add(ADD, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 400, 100, 59));
 
+        UPDATE.setBackground(new java.awt.Color(255, 0, 0));
         UPDATE.setText("UPDATE");
         UPDATE.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -266,9 +269,8 @@ String quantity= ED.getText();
         jLabel2.setFont(new java.awt.Font("Sylfaen", 1, 36)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/book (7).png"))); // NOI18N
         jLabel2.setText("ADD BOOK");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 10, 280, 70));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 10, 280, 70));
 
         BOOKDET.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -281,7 +283,8 @@ String quantity= ED.getText();
 
             }
         ));
-        BOOKDET.setColorBackgoundHead(new java.awt.Color(204, 0, 0));
+        BOOKDET.setColorBackgoundHead(new java.awt.Color(255, 255, 255));
+        BOOKDET.setColorForegroundHead(new java.awt.Color(0, 204, 0));
         BOOKDET.setFuenteHead(new java.awt.Font("Sylfaen", 1, 14)); // NOI18N
         BOOKDET.setGrosorBordeFilas(0);
         BOOKDET.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -291,11 +294,12 @@ String quantity= ED.getText();
         });
         jScrollPane1.setViewportView(BOOKDET);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 140, 530, 400));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 140, 520, 400));
 
         search.setBorder(null);
         search.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         search.setFont(new java.awt.Font("Sylfaen", 1, 12)); // NOI18N
+        search.setPhColor(new java.awt.Color(0, 204, 0));
         search.setPlaceholder("SEARCH");
         search.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -304,7 +308,7 @@ String quantity= ED.getText();
         });
         jPanel1.add(search, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 110, 340, 20));
 
-        rSMaterialButtonCircle2.setBackground(new java.awt.Color(204, 0, 0));
+        rSMaterialButtonCircle2.setBackground(new java.awt.Color(0, 204, 0));
         rSMaterialButtonCircle2.setText("PRINT");
         rSMaterialButtonCircle2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

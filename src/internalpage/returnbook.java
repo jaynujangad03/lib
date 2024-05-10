@@ -36,7 +36,7 @@ private Connection connection;
  int sid= Integer.parseInt(STUDid.getText());
  
     try {
-         connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/library_ba", "root", "");
+         connection = DriverManager.getConnection("jdbc:mysql://localhost:3307/library_ba", "root", "");
          String sql = "SELECT * FROM issued_bookdet where ISBN = ? and ID = ? and STATUS =?";
         PreparedStatement pst = connection.prepareStatement(sql);
         
@@ -71,7 +71,7 @@ boolean isreturnbook = false;
  int bookid = Integer.parseInt(ISBN.getText());
  int sid= Integer.parseInt(STUDid.getText());
     try {
-        connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/library_ba", "root", "");
+        connection = DriverManager.getConnection("jdbc:mysql://localhost:3307/library_ba", "root", "");
          String sql = "update issued_bookdet set STATUS = ? where ID = ? and ISBN = ? and STATUS = ?";
          PreparedStatement pst = connection.prepareStatement(sql);
          pst.setString(1, "RETURNED");
@@ -94,7 +94,7 @@ boolean isreturnbook = false;
 public void updatebookquant(){
  int bookid= Integer.parseInt(ISBN.getText());
      try {
-          connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/library_ba", "root", "");
+          connection = DriverManager.getConnection("jdbc:mysql://localhost:3307/library_ba", "root", "");
           String sql = "update book_details set QUANTITY = QUANTITY + 1 where ISBN =?";
           PreparedStatement pst = connection.prepareStatement(sql);
           pst.setInt(1, bookid);
@@ -159,10 +159,10 @@ String studenti = STUDid.getText();
 
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(0, 58, 140));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel10.setBackground(new java.awt.Color(204, 0, 0));
+        jPanel10.setBackground(new java.awt.Color(0, 204, 0));
         jPanel10.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Sylfaen", 1, 14)); // NOI18N
@@ -233,9 +233,7 @@ String studenti = STUDid.getText();
 
         jPanel1.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 450, 540));
 
-        ISBN.setBackground(new java.awt.Color(0, 58, 140));
         ISBN.setBorder(null);
-        ISBN.setForeground(new java.awt.Color(153, 255, 153));
         ISBN.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         ISBN.setFont(new java.awt.Font("Sylfaen", 1, 15)); // NOI18N
         ISBN.setOpaque(false);
@@ -247,21 +245,21 @@ String studenti = STUDid.getText();
         });
         jPanel1.add(ISBN, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 150, -1, -1));
 
+        jLabel14.setBackground(new java.awt.Color(0, 190, 82));
         jLabel14.setFont(new java.awt.Font("Sylfaen", 1, 14)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel14.setForeground(new java.awt.Color(0, 204, 0));
         jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel14.setText("ISBN:");
         jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 120, 90, 30));
 
+        jLabel15.setBackground(new java.awt.Color(0, 190, 82));
         jLabel15.setFont(new java.awt.Font("Sylfaen", 1, 14)); // NOI18N
-        jLabel15.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel15.setForeground(new java.awt.Color(0, 204, 0));
         jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel15.setText("STUDENT ID:");
         jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 190, 110, 40));
 
-        STUDid.setBackground(new java.awt.Color(0, 58, 140));
         STUDid.setBorder(null);
-        STUDid.setForeground(new java.awt.Color(153, 255, 153));
         STUDid.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         STUDid.setFont(new java.awt.Font("Sylfaen", 1, 15)); // NOI18N
         STUDid.setOpaque(false);
@@ -278,7 +276,7 @@ String studenti = STUDid.getText();
         });
         jPanel1.add(STUDid, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 220, -1, -1));
 
-        FINDET.setBackground(new java.awt.Color(255, 102, 102));
+        FINDET.setBackground(new java.awt.Color(255, 0, 0));
         FINDET.setText("FIND DETAILS");
         FINDET.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -295,7 +293,7 @@ String studenti = STUDid.getText();
         jLabel20.setText("_______________________________");
         jPanel1.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 160, 210, 40));
 
-        RETURNBOOK.setBackground(new java.awt.Color(255, 102, 102));
+        RETURNBOOK.setBackground(new java.awt.Color(255, 0, 0));
         RETURNBOOK.setText("RETURN BOOK");
         RETURNBOOK.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -304,11 +302,11 @@ String studenti = STUDid.getText();
         });
         jPanel1.add(RETURNBOOK, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 350, 270, 60));
 
-        jLabel16.setFont(new java.awt.Font("Sylfaen", 1, 18)); // NOI18N
-        jLabel16.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/return (3).png"))); // NOI18N
+        jLabel16.setBackground(new java.awt.Color(0, 190, 82));
+        jLabel16.setFont(new java.awt.Font("Sylfaen", 1, 24)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(0, 204, 0));
         jLabel16.setText("RETURN BOOK");
-        jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 10, 320, 80));
+        jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 10, 190, 80));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 870, 540));
 

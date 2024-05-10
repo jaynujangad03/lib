@@ -64,7 +64,7 @@ gslip();
   private void getbookdet(){
  int bookid= Integer.parseInt(isbn.getText());
  try{
-  connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/library_ba", "root", "");
+  connection = DriverManager.getConnection("jdbc:mysql://localhost:3307/library_ba", "root", "");
   PreparedStatement pst = connection.prepareStatement("SELECT * FROM book_details where ISBN =?");
   pst.setInt(1, bookid);
   ResultSet rs = pst.executeQuery();
@@ -88,7 +88,7 @@ gslip();
  private void getstudentdet(){
  int sid= Integer.parseInt(studentid.getText());
  try{
-  connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/library_ba", "root", "");
+  connection = DriverManager.getConnection("jdbc:mysql://localhost:3307/library_ba", "root", "");
   PreparedStatement pst = connection.prepareStatement("SELECT * FROM student_details where ID =?");
   pst.setInt(1, sid);
   ResultSet rs = pst.executeQuery();
@@ -172,7 +172,7 @@ gslip();
   java.sql.Date sduedate = new java.sql.Date(l2);
   
      try {
-     connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/library_ba", "root", "");
+     connection = DriverManager.getConnection("jdbc:mysql://localhost:3307/library_ba", "root", "");
      String sql = "insert into issued_bookdet(ISBN,ID,ISSUED,DUE,STATUS) values(?,?,?,?,?)";
      
      PreparedStatement pst = connection.prepareStatement(sql);
@@ -202,7 +202,7 @@ gslip();
  public void updatebookquant(){
  int bookid= Integer.parseInt(isbn.getText());
      try {
-          connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/library_ba", "root", "");
+          connection = DriverManager.getConnection("jdbc:mysql://localhost:3307/library_ba", "root", "");
           String sql = "update book_details set QUANTITY = QUANTITY - 1 where ISBN =?";
           PreparedStatement pst = connection.prepareStatement(sql);
           pst.setInt(1, bookid);
@@ -229,7 +229,7 @@ gslip();
   int sid= Integer.parseInt(studentid.getText());
   
      try {
-          connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/library_ba", "root", "");
+          connection = DriverManager.getConnection("jdbc:mysql://localhost:3307/library_ba", "root", "");
           String sql = "select * from issued_bookdet where ISBN = ? and ID = ? and STATUS =?";
           PreparedStatement pst = connection.prepareStatement(sql);
           
@@ -325,10 +325,10 @@ String studenti = studentid.getText();
         slip = new javax.swing.JTextArea();
         print = new rojerusan.RSMaterialButtonCircle();
 
-        jPanel1.setBackground(new java.awt.Color(0, 58, 140));
+        jPanel1.setBackground(new java.awt.Color(153, 153, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel10.setBackground(new java.awt.Color(204, 0, 0));
+        jPanel10.setBackground(new java.awt.Color(0, 204, 0));
         jPanel10.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Sylfaen", 1, 14)); // NOI18N
@@ -483,9 +483,9 @@ String studenti = studentid.getText();
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 0, 280, 540));
 
-        isbn.setBackground(new java.awt.Color(0, 58, 140));
+        isbn.setBackground(new java.awt.Color(153, 153, 255));
         isbn.setBorder(null);
-        isbn.setForeground(new java.awt.Color(153, 255, 153));
+        isbn.setForeground(new java.awt.Color(255, 255, 255));
         isbn.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         isbn.setFont(new java.awt.Font("Sylfaen", 1, 15)); // NOI18N
         isbn.setOpaque(false);
@@ -538,9 +538,9 @@ String studenti = studentid.getText();
         ISSUEDATE.setFont(new java.awt.Font("Sylfaen", 1, 14)); // NOI18N
         jPanel1.add(ISSUEDATE, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 260, 220, 30));
 
-        studentid.setBackground(new java.awt.Color(0, 58, 140));
+        studentid.setBackground(new java.awt.Color(153, 153, 255));
         studentid.setBorder(null);
-        studentid.setForeground(new java.awt.Color(153, 255, 153));
+        studentid.setForeground(new java.awt.Color(255, 255, 255));
         studentid.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         studentid.setFont(new java.awt.Font("Sylfaen", 1, 15)); // NOI18N
         studentid.setOpaque(false);
@@ -557,8 +557,8 @@ String studenti = studentid.getText();
         });
         jPanel1.add(studentid, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 190, -1, -1));
 
-        rSMaterialButtonCircle1.setBackground(new java.awt.Color(153, 0, 0));
-        rSMaterialButtonCircle1.setText("ISSUE BOOK");
+        rSMaterialButtonCircle1.setBackground(new java.awt.Color(255, 0, 0));
+        rSMaterialButtonCircle1.setText("Borrow Book");
         rSMaterialButtonCircle1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rSMaterialButtonCircle1ActionPerformed(evt);
@@ -580,7 +580,7 @@ String studenti = studentid.getText();
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 450, 300, 90));
 
-        print.setBackground(new java.awt.Color(153, 0, 0));
+        print.setBackground(new java.awt.Color(255, 0, 0));
         print.setText("print");
         print.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

@@ -40,7 +40,7 @@ DefaultTableModel model;
     }
   public void viewdetails(){
         try {
-             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/library_ba", "root", "");
+             con = DriverManager.getConnection("jdbc:mysql://localhost:3307/library_ba", "root", "");
              Statement st = con.createStatement();
              ResultSet rs = st.executeQuery("select * from issued_bookdet");
              
@@ -86,7 +86,7 @@ DefaultTableModel model;
   java.sql.Date sddate = new java.sql.Date(l2);
   
       try {
-           con = DriverManager.getConnection("jdbc:mysql://localhost:3306/library_ba", "root", "");
+           con = DriverManager.getConnection("jdbc:mysql://localhost:3307/library_ba", "root", "");
            String sql = "select * from issued_bookdet where ISSUED BETWEEN ? and ?";
            PreparedStatement pst = con.prepareStatement(sql);
            pst.setDate(1, sidate);
@@ -155,10 +155,10 @@ DefaultTableModel model;
 
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(0, 58, 140));
+        jPanel1.setBackground(new java.awt.Color(0, 204, 0));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel10.setBackground(new java.awt.Color(204, 0, 0));
+        jPanel10.setBackground(new java.awt.Color(255, 255, 255));
         jPanel10.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         DETAILS.setModel(new javax.swing.table.DefaultTableModel(
@@ -177,7 +177,8 @@ DefaultTableModel model;
                 return canEdit [columnIndex];
             }
         });
-        DETAILS.setColorBackgoundHead(new java.awt.Color(0, 153, 153));
+        DETAILS.setColorBackgoundHead(new java.awt.Color(255, 255, 255));
+        DETAILS.setColorForegroundHead(new java.awt.Color(0, 204, 0));
         DETAILS.setFuenteFilas(new java.awt.Font("Sylfaen", 1, 12)); // NOI18N
         DETAILS.setFuenteFilasSelect(new java.awt.Font("Sylfaen", 1, 12)); // NOI18N
         DETAILS.setFuenteHead(new java.awt.Font("Sylfaen", 1, 14)); // NOI18N
@@ -185,8 +186,9 @@ DefaultTableModel model;
         DETAILS.setGrosorBordeFilas(0);
         jScrollPane1.setViewportView(DETAILS);
 
-        jPanel10.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 810, 290));
+        jPanel10.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 850, 300));
 
+        rSMaterialButtonCircle1.setBackground(new java.awt.Color(0, 204, 0));
         rSMaterialButtonCircle1.setText("PRINT");
         rSMaterialButtonCircle1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -227,7 +229,7 @@ DefaultTableModel model;
         jLabel2.setText("ISSUE DATE:");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 90, 150, 30));
 
-        VIEWALL.setBackground(new java.awt.Color(0, 102, 102));
+        VIEWALL.setBackground(new java.awt.Color(255, 0, 0));
         VIEWALL.setText("VIEW ALL");
         VIEWALL.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -236,7 +238,7 @@ DefaultTableModel model;
         });
         jPanel1.add(VIEWALL, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 100, 150, 50));
 
-        SEARCH.setBackground(new java.awt.Color(0, 102, 102));
+        SEARCH.setBackground(new java.awt.Color(255, 0, 0));
         SEARCH.setText("SEARCH");
         SEARCH.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

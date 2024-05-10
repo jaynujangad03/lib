@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package internalpage;
-import lib.DASHBOARD;
+import libraryManagementSystem.DASHBOARD;
 import CONFIG.DBCONNECTOR;
 import java.sql.ResultSet;
 import java.sql.Connection;
@@ -16,8 +16,8 @@ import java.sql.SQLException;
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
-import lib.bookdet;
-import lib.studentdet;
+import libraryManagementSystem.bookdet;
+import libraryManagementSystem.studentdet;
 import net.proteanit.sql.DbUtils;
 public class dashabord extends javax.swing.JInternalFrame {
 private Connection con;
@@ -43,7 +43,7 @@ DefaultTableModel model;
   Date todaydate = new Date(l);
   
       try {
-           con = DriverManager.getConnection("jdbc:mysql://localhost:3306/library_ba", "root", "");
+           con = DriverManager.getConnection("jdbc:mysql://localhost:3307/library_ba", "root", "");
           st = con.prepareStatement("SELECT COUNT(*) FROM student_details");
            rs = st.executeQuery();
           while (rs.next()){
@@ -104,11 +104,10 @@ DefaultTableModel model;
         jPanel9 = new javax.swing.JPanel();
         nviolators = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
 
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(0, 58, 140));
+        jPanel1.setBackground(new java.awt.Color(0, 204, 51));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel2.setBackground(new java.awt.Color(204, 204, 204));
@@ -228,6 +227,11 @@ DefaultTableModel model;
 
         isbook.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
         isbook.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        isbook.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                isbookMouseClicked(evt);
+            }
+        });
         jPanel4.add(isbook, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 60, 80, 90));
 
         jLabel6.setBackground(new java.awt.Color(153, 153, 153));
@@ -258,6 +262,11 @@ DefaultTableModel model;
 
         nviolators.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
         nviolators.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        nviolators.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                nviolatorsMouseClicked(evt);
+            }
+        });
         jPanel5.add(nviolators, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 240, 140));
 
         jLabel9.setBackground(new java.awt.Color(153, 153, 153));
@@ -268,18 +277,14 @@ DefaultTableModel model;
 
         jPanel1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 310, 240, 190));
 
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/bg.jpg"))); // NOI18N
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 870, 540));
-
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 870, 540));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void nbookMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nbookMouseClicked
- bookdet stf = new bookdet();   
-  stf.setVisible(true);
+ bookdet bt = new bookdet();   
+  bt.setVisible(true);
    JFrame mainFrame = (JFrame) SwingUtilities.getWindowAncestor(this);
           mainFrame.dispose();
 
@@ -299,10 +304,25 @@ DefaultTableModel model;
           mainFrame.dispose();
     }//GEN-LAST:event_nstudentsMouseClicked
 
+    private void isbookMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_isbookMouseClicked
+        // TODO add your handling code here:
+        issuebook ib = new issuebook();   
+  ib.setVisible(true);
+   JFrame mainFrame = (JFrame) SwingUtilities.getWindowAncestor(this);
+          mainFrame.dispose();
+    }//GEN-LAST:event_isbookMouseClicked
+
+    private void nviolatorsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nviolatorsMouseClicked
+        // TODO add your handling code here:
+        VIOLATION vt = new VIOLATION();   
+  vt.setVisible(true);
+   JFrame mainFrame = (JFrame) SwingUtilities.getWindowAncestor(this);
+          mainFrame.dispose();
+    }//GEN-LAST:event_nviolatorsMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel isbook;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
